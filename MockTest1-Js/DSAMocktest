@@ -1,0 +1,104 @@
+
+// Move Zeroes
+// Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+// Note that you must do this in-place without making a copy of the array.
+
+// Example 1:
+// Input: nums = [0,1,0,3,12]
+// Output: [1,3,12,0,0]
+
+// Example 2:
+// Input: nums = [0]
+// Output: [0]
+
+// Constraints:
+// a. 1 <= nums.length <= 10^4
+// b. -2^31 <= nums[i] <= 2^31 - 1
+
+function moveZeroes(nums) {
+  let nonZeroIndex = 0;
+
+  // Move all non-zero elements to the front of the array
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[nonZeroIndex] = nums[i];
+      nonZeroIndex++;
+    }
+  }
+
+  // Fill the remaining elements with zeroes
+  for (let i = nonZeroIndex; i < nums.length; i++) {
+    nums[i] = 0;
+  }
+}
+
+// Test case 1
+const nums1 = [0, 1, 0, 3, 12];
+moveZeroes(nums1);
+console.log(nums1); // Output: [1, 3, 12, 0, 0]
+
+// Test case 2
+const nums2 = [0];
+moveZeroes(nums2);
+console.log(nums2); // Output: [0]
+
+
+
+
+// First Unique Character in a String
+
+// Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+// Example 1:
+// Input: s = "leetcode"
+// Output: 0
+
+// Example 2:
+// Input: s = "loveleetcode"
+// Output: 2
+
+// Example 3:
+// Input: s = "aabb"
+// Output: -1
+
+// Constraints:
+// a. 1 <= s.length <= 10^5
+// b. s consists of only lowercase English letters.
+
+
+function firstUniqChar(s) {
+    const charCounts = {};
+  
+    // Count the occurrences of each character
+    for (let i = 0; i < s.length; i++) {
+      const char = s[i];
+      if (charCounts[char] === undefined) {
+        charCounts[char] = 1;
+      } else {
+        charCounts[char]++;
+      }
+    }
+  
+    // Find the index of the first non-repeating character
+    for (let i = 0; i < s.length; i++) {
+      if (charCounts[s[i]] === 1) {
+        return i;
+      }
+    }
+  
+    return -1; // No non-repeating character found
+  }
+  
+  // Test case 1
+  const s1 = "leetcode";
+  console.log(firstUniqChar(s1)); // Output: 0
+  
+  // Test case 2
+  const s2 = "loveleetcode";
+  console.log(firstUniqChar(s2)); // Output: 2
+  
+  // Test case 3
+  const s3 = "aabb";
+  console.log(firstUniqChar(s3)); // Output: -1
+  
