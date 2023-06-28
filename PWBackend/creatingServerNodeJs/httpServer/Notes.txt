@@ -1,0 +1,31 @@
+Hypertext Transfer Protocol
+core module
+create Server and handle HTTP request/response.
+to use HTTP srever and Client one must require("node:http)
+
+//Features of HTTP method
+*Create an HTTP server using `http.createServer()`
+*Listen to incomong request using the `server.listen()` method.
+*handle incoming requests and send responses using the `request` and `response` object passed to server's request event
+*Set headers on the response object using `response.setHeader()`
+*Write data to theresponse object using `response.write()` 
+*End the response using `response.end()`
+*Send an HTTP request to a server using `http.request()`
+Receive a response from a server using the `response` event  `http.clientRequest` object returned by `http.request()`
+
+URL (Uniform Resource Location) web Address
+*refrence to a web resourse that specifies its location on a computer network and a  mechanism for retrieving it.
+*URL were defined in REC 1738 in 1994 by Tim Berners-Lee
+*URLs occur mostcommonly ref web pages (HTTP)but for file transfer (FTP),email(mailto),database access and application.
+
+
+
+             *hostname        *Path              *slug/resource
+https://www.example.com/course/search?q=term/#javascript
+  ^      ^     ^     ^                   ^
+  *       *   domain *                query string
+  *  sub domain      *
+  *                  *
+  *           top-level domain
+  *
+scheme/protocol
