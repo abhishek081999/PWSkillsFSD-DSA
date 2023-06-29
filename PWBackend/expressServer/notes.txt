@@ -1,0 +1,53 @@
+FreameWork:
+Software tool or Platform >developers>with a set of pre-written code,component and libraries
+Ruby on rail , Django,Laraval,React Angular
+Set of guidance and best practices
+
+Nodejs FreameWork
+Express.js  Fast unoponioniated, minimalist  (routing ,Middleware)
+Koa.js 
+Nest.js
+Hapi.js
+Fastify.js
+Sails.js
+
+Well known port:
+Assign by  Internet Assigned Numbers Authority IANA
+0 to 1023
+Ex
+PORT 80 HTTP
+PORT 443 HTTPs 
+PORT  25 SMTP Simple mail transfer protocol
+PORT 853 DNS Domain name system
+PORT 110 POP3Post office Protocol version 3
+
+
+Regestered PORT:
+1024 -  49151
+Port 8080:HTTP alternate(used as secondary web server port)
+port 3306:MySQL
+Port 5432:PostgreSQL
+Port 3398:Remote desktop protocol
+
+Dynamic or Private Port 
+ 49152 - 65535
+ use close
+
+
+ Rest API
+ REST Representational State transfer(how transfer)format
+ API Application PRogramming Interface (req res ) structure
+ interface that two computers systems use to exchange information securely over the Internet
+ Dr Roy Fielding in his doctoral dissertation in 2000
+ architectural styles for building distributed system
+ based on core principles:
+ Client Server Architecture
+ Stateless communication
+ Resource based intraction
+ Uniform Interface
+ Cachesble
+
+
+API protocol tools and standards that enable to communication  bw diff software apps
+Stateless and    weather
+stateful apis   maintain state or context information bw request  session online shoping cart token cookies 
