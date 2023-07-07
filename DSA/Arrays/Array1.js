@@ -111,7 +111,7 @@ const maxProfit = (prices) => {
 // Output: 6
 // Explanation: [2,3] has the largest product 6.
 
-// </aside>
+// </aside> O(N)
 
 const maxProduct = function (nums) {
     let currMax = nums[0];

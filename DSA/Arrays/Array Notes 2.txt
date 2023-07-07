@@ -1,0 +1,146 @@
+Find the duplicate number
+Find the missing and repeating number in array
+Majority Element
+Merge Intervals
+Merge Sorted Array
+Kth Smallest Elementin array
+Find minimum number of merge operation to make an array Palindrome
+
+
+
+
+Q5 Find Duplicate Number
+1)Sort T(O(nlogn)) S(O(1))
+for(i=1;i<n;i++){
+    if(arr[i]==arr[i-1]){
+        duplicate = arr[i];
+    }
+}
+
+13422
+T=S=O(N)
+2nd     (Hashmap)        |  (Hashset)
+     number.frq          |  |_2_|    if set already contain  it is duplicate
+     frq>1-->duplicate   |  |_4_|
+                         |  |_3_|
+                         |  |_1_|
+Space more Optimize?
+index check number at ita point or not
+13422
+01234   o(1)
+
+
+Q Find Missing & Repating number in array starting from --1
+arr=[31542675]
+missing=8 repeating=5
+
+Brutforce >hashing-> 0-8 ----------put 1 0 zero in indexes then loop from 1  
+ wher 0 >>missing no.
+ where number>1 >>repeating no
+ T ->O(N) S_>o(N)
+ Space Optimize 
+ 
+ 2) (Sorting) T(Nlogn) S(O(1))
+
+ 3)Optimize
+ Sum of Ist N  natural numbers
+ Sum(1-N) = n(n+1)/2
+ Sum of Square of 2 N naturan number
+ Sum(1^2+ 2^2+++++n^2)  N(N+1)(2N+1)/6
+s-sn 
+s^2 -sn^2
+
+
+Q Maority Element
+element that occur more than N/2 times
+arr=[224444]
+
+brutforce approach
+count++  T= O(N^2) S=O(1)
+j=i+1
+arr[i]=arr[j]
+optimize ) Hashmap key,value  maxleter  frq
+O(n)
+
+Greedy operation) T=O(n) S=o(1)
+maj e=2      maj ec=1
+for (i=1; i<N, i++){
+    (arr[i]==maj e)
+    maj ec++
+else 
+maj ec --
+if(maj ec = 0)
+    maj e = arr[i]
+    maj ec =1
+}
+
+
+QMin no. of merge operatoin to make an array Palindrome
+NITIN
+12321
+
+14591
+start i=0  end j=n-1  merge = 0
+if(arr[i] == arr[j]){
+    i++
+    j--
+}
+if(arr[i]<arr[j])
+i++
+arr[i]+=arr[i-1]
+merge++
+i>j stop
+
+
+if(arr[i]>arr[j]){
+    j--
+}arr[j]+=arr[j+1]
+
+
+
+
+
+
+Q Merge Intervals
+{1,3}{2,6}{8,10}{15,18}
+
+brut force
+1,3  2,6    3>2---->merge
+for(i=0;i<n-1){
+    for(j=i+1: j<n)
+}
+T,S=O(n^2),O(n)
+OPtimise
+Sort (1,3)(2,6)(8,10)(15,18)
+T=O(nlogn)
+
+
+Q  Merge 2 sorted array
+arr1={1,2,3,0,0,0}
+arr2={2,5,6}
+size = 6
+arr = 122356
+
+brutforce >123256>sort>O(nlogn) s=O(n+m)
+
+
+2) Pi=arr[m-1]   p2=arr2{n-1}
+1 2 3p1
+2 5 6p2 T=O(m+n) S = 0(1)
+
+Q kth smallest element in an arrayarr= [1,2,3,5,7,4,19,26]
+k=3
+3rd smallest element -->5
+Sort>34571219 26
+t=O(nlogn) s=o(n)
+
+Quick select()>
+Pivot |partitioning
+12 3 5 7 4 19 26
+
+arr 0 6 k=3
+i=0
+if(arr[j]<=x)swap i++
+26 3 5 7 4 19 12
+3 26 5 7 4 19 12
+T=O(n^2) O(n) space O(logn)
