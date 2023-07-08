@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 130vh;
+            width: 100vw;
+            box-sizing: border-box;
+
+        }
+
+        nav {
+            height: 10vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #logo {
+            color: blue;
+            font-size: larger;
+            margin-left: 1rem;
+            font-weight: bolder;
+        }
+
+        #headlist {
+            display: flex;
+			flex-direction:row;
+			
+            align-items: center;
+            list-style: none;
+            color: white;
+            font-size: medium;
+            font-weight: 700;
+            gap: 2rem;
+        }
+
+        #navbtn {
+            padding: 8px 22px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-right: 2rem;
+        }
+
+        section {
+            display: flex;
+            height: 90vh;
+        }
+
+        .bank-logo {
+            height: 100px;
+            width: 200px;
+            margin: 2rem 0rem 0rem 2rem;
+        }
+
+        #text {
+            margin: 5rem 1rem 0rem 3rem;
+        }
+
+        #sayhi {
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+
+        #onecard {
+            font-size: 50px;
+            font-weight: bolder;
+            color: blue;
+        }
+
+        #cobrand {
+            font-size: 20px;
+            font-weight: bolder;
+            color: blue;
+        }
+
+        #last-text {
+            font-size: 18px;
+            font-weight: lighter;
+            color: black;
+        }
+
+        footer {
+            height: 50vh;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer h1 {
+            font-size: 30px;
+            color: blue
+        }
+
+        footer h2 {
+            color: white;
+        }
+        #foot{
+            display:flex;
+            justify-content: space-between;
+            
+            background-color: black;
+            color:white;
+            padding: 0rem 2rem 1rem 2rem;
+        }
+        ul{
+            flex-direction: column;
+        }
+        #foot h1{
+            font-size: 20px;
+        }
+        #foot li{
+            font-size: 15px;
+            font-weight: lighter;
+        }
+        #des{
+            width: 25vw;
+        }
+        #newsbtn{
+            background-color:blue;
+            color:white;
+            border:none;
+            width: 100%;
+            border-radius: 25px;
+        }
+        @media screen and (max-width: 460px) {
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                box-sizing: border-box;
+
+            }
+
+            nav {
+                height: 8vh;
+                background-color: black;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .burger {
+                display: none;
+            }
+
+            #logo {
+                color: blue;
+                font-size: larger;
+                margin-left: 1rem;
+                font-weight: bolder;
+            }
+
+            ul {
+                display: none;
+
+            }
+
+            #navbtn {
+                display: none;
+            }
+
+            .burger {
+                display: inline;
+            }
+
+            .line {
+                height: 2px;
+                width: 45px;
+                margin: 10px;
+                background-color: white;
+                margin-right: 2rem;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .bank-logo {
+                height: 100px;
+                width: 200px;
+                margin: 2rem 0rem 0rem 2rem;
+            }
+
+            #text {
+                margin: 5rem 1rem 0rem 3rem;
+            }
+
+            #sayhi {
+                font-size: xx-large;
+                font-weight: bolder;
+            }
+
+            #onecard {
+                font-size: 50px;
+                font-weight: bolder;
+                color: blue;
+            }
+
+            #cobrand {
+                font-size: 20px;
+                font-weight: bolder;
+                color: blue;
+            }
+
+            #last-text {
+                font-size: 18px;
+                font-weight: lighter;
+                color: black;
+            }
+
+            footer {
+                height: 50vh;
+                width: 100vw;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            footer h1 {
+                font-size: 30px;
+                color: blue
+            }
+
+            footer h2 {
+                color: black;
+            }
+
+            footer {
+            height: 50vh;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer h1 {
+            font-size: 30px;
+            color: blue
+        }
+
+        footer h2 {
+            color: white;
+        }
+        #foot{
+            display:flex;
+            flex-direction: column;
+            justify-content: start;
+            
+            background-color: black;
+            color:white;
+            padding: 0rem 2rem 1rem 2rem;
+        }
+        #footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+        }
+        #foot h1{
+            font-size: 20px;
+        }
+        #foot li{
+            font-size: 15px;
+            font-weight: lighter;
+        }
+        #des{
+            width: 100%;
+        }
+        #foot input{
+            width: 100%;
+        }
+        #newsbtn{
+            background-color:blue;
+            color:white;
+            border:none;
+            width: 100%;
+            border-radius: 25px;
+        }
+       
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1 id="logo">
+            LO <br> GO
+        </h1>
+
+        <ul id="headlist">
+            <li>Home</li>
+            <li>Blog</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <button id="navbtn">
+            Login
+        </button>
+    </nav>
+    <section>
+        <div id="text">
+            <span id="sayhi">Say Hi To</span> <br>
+            <span id="onecard">One Card</span> <br>
+            <span id="cobrand">Co-branded Card Issuers:</span><br>
+            <img class="bank-logo" src="./sbm.png" />
+            <p id="last-text">India's best metal credit card. Built with full-stack tech. Backed by the priciples of
+                simplicity
+                ,transparency,and giving control back to user.
+            </p>
+
+        </div>
+        <video class="img-fluid" style="width:100%; height:auto;float:left;" autoplay="autoplay" muted="muted"
+            loop="loop">
+            <source src="https://www.getonecard.app/images/say_hi_2x_d3_.mp4" type="video/mp4">
+        </video>
+    </section>
+    <footer>
+        <h1>No Hidden Fees Ever</h1>
+        <h2>No Joining Fees</h2>
+        <h2>No Annual Fees</h2>
+        <h2>No Rewards Redemption Fees</h2>
+    </footer>
+
+    <div id="foot">
+        <div id="des">
+            <h1>One Card</h1>
+            <p>India's best metal credit card. Built with full-stack tech. Backed by the priciples of
+                simplicity
+                ,transparency,and giving control back to user.</p>
+        </div>
+        <div>
+            <h1>Navigation</h1>
+            <ul id="footer">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Carrers</li>
+                <li>Offers</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Support</h1>
+            <ul id="footer">
+                <li>F.A.Q</li>
+                <li>Cookies Policy</li>
+                <li>Terms of Service</li>
+                <li>Support</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Newsletter</h1>
+            <input placeholder="Your Email id here"><br>
+            <button id="newsbtn">Subscribe</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

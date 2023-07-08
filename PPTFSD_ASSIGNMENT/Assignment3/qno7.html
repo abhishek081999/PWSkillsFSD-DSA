@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Images</title>
+    <style>
+        center{
+            font-size: 30px;
+            color:black;
+        }
+        .conatiner{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr ;
+            gap:0px;
+            height: 85vh;
+            width: 100vw;
+        }
+        .cell{
+            
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        img{
+            height:42vh;
+            width:33vw;
+            border-radius: 20px;
+        }
+
+        @media screen  and (max-width: 460px) {
+            .conatiner{
+            display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr ;
+            gap:0px;
+            height: 100vh;
+            width: 100vw;
+        }
+        .cell{
+            
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        img{
+            height:33vh;
+            width:99vw;
+            border-radius: 20px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <center><u>Random Images</u></center>
+    <div class="conatiner">
+        
+        <div class="cell"><img src="./bob.png" alt="1"/></div>
+        <div class="cell"><img src="./a.JPG" alt="a"/></div>
+        <div class="cell"><img src="./b.JPG" alt="b"/></div>
+        <div class="cell"><img src="./c.jpg" alt="c"/></div>
+        <div class="cell"><img src="./d.jpg" alt="d"/></div>
+        <div class="cell"><img src="./bob.png" alt="2"/></div>
+        
+</body>
+</html>
