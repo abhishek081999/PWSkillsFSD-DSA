@@ -344,3 +344,171 @@ function flipAndInvertImage(A) {
     }
     return A;
 }
+
+
+
+
+// Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+
+// You must do it [in place](https://en.wikipedia.org/wiki/In-place_algorithm).
+
+// **Example 1:**
+
+// **Input:** matrix = [[1,1,1],[1,0,1],[1,1,1]]
+
+// **Output:** [[1,0,1],[0,0,0],[1,0,1]]
+
+// ********Solution:********
+
+// **Complexity Analysis**
+
+// - **Time Complexity:** *O*(*M*×*N*)
+// - **Space Complexity:** *O*(1)
+
+function setZeroes(matrix) {
+    let isCol = false;
+    const R = matrix.length;
+    const C = matrix[0].length;
+
+    for (let i = 0; i < R; i++) {
+        if (matrix[i][0] === 0) {
+            isCol = true;
+        }
+
+        for (let j = 1; j < C; j++) {
+            if (matrix[i][j] === 0) {
+                matrix[0][j] = 0;
+                matrix[i][0] = 0;
+            }
+        }
+    }
+
+    for (let i = 1; i < R; i++) {
+        for (let j = 1; j < C; j++) {
+            if (matrix[i][0] === 0 || matrix[0][j] === 0) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    if (matrix[0][0] === 0) {
+        for (let j = 0; j < C; j++) {
+            matrix[0][j] = 0;
+        }
+    }
+
+    if (isCol) {
+        for (let i = 0; i < R; i++) {
+            matrix[i][0] = 0;
+        }
+    }
+}
+
+
+
+{/* <aside>
+💡 ********************Question 2********************
+
+In MATLAB, there is a handy function called reshape which can reshape an m x n matrix into a new one with a different size r x c keeping its original data.
+
+You are given an m x n matrix mat and two integers r and c representing the number of rows and the number of columns of the wanted reshaped matrix.
+
+The reshaped matrix should be filled with all the elements of the original matrix in the same row-traversing order as they were.
+
+If the reshape operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix.
+
+**Example 1:**
+
+</aside> */}
+// **Input:** mat = [[1,2],[3,4]], r = 1, c = 4
+
+// **Output:**
+
+// [[1,2,3,4]]
+
+// ******************Solution:******************
+
+// The simplest method is to extract all the elements of the given matrix by reading the elements in a row-wise fashion. In this implementation, we use a queue to put the extracted elements. Then, we can take out the elements of the queue formed in a serial order and arrange the elements in the resultant required matrix in a row-by-row order again.
+
+// The formation of the resultant matrix won't be possible if the number of elements in the original matrix isn't equal to the number of elements in the resultant matrix.
+
+// **Complexity Analysis**
+// **Complexity Analysis**
+
+// - **Time complexity:** *O*(*m*⋅*n*). We traverse over *m*⋅*n* elements twice. Here, *m* and *n* refer to the number of rows and columns of the given matrix respectively.
+// - **Space complexity:** *O*(*m*⋅*n*). The queue formed will be of size *m*⋅*n*.
+
+
+function matrixReshape(nums, r, c) {
+    const res = new Array(r).fill(0).map(() => new Array(c).fill(0));
+    if (nums.length === 0 || r * c !== nums.length * nums[0].length)
+        return nums;
+    const queue = [];
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 0; j < nums[0].length; j++) {
+            queue.push(nums[i][j]);
+        }
+    }
+    for (let i = 0; i < r; i++) {
+        for (let j = 0; j < c; j++) {
+            res[i][j] = queue.shift();
+        }
+    }
+    return res;
+}
+
+
+
+
+
+
+{/* <aside>
+💡 ********************Question 3********************
+
+Given an n x n binary matrix image, flip the image **horizontally**, then invert it, and return *the resulting image*.
+
+To flip an image horizontally means that each row of the image is reversed.
+
+- For example, flipping [1,1,0] horizontally results in [0,1,1].
+
+To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0.
+
+- For example, inverting [0,1,1] results in [1,0,0].
+
+**Example 1:**
+
+**Input:** image = [[1,1,0],[1,0,1],[0,0,0]]
+
+**Output:** [[1,0,0],[0,1,0],[1,1,1]]
+
+**Explanation:** First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+
+Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
+
+******************Solution:******************
+
+**Intuition and Algorithm**
+
+We can do this in place. In each row, the ith value from the left is equal to the inverse of the ith value from the right.
+
+We use (C+1) / 2 (with floor division) to iterate over all indexes i in the first half of the row, including the center.
+
+**Complexity Analysis**
+
+**Time Complexity:** *O*(*N*), where N is the total number of elements in A.
+
+**Space Complexity:** *O*(1) in *additional* space complexity.
+
+</aside> */}
+
+function flipAndInvertImage(A) {
+    const C = A[0].length;
+    for (let row of A) {
+        for (let i = 0; i < Math.floor((C + 1) / 2); ++i) {
+            const tmp = row[i] ^ 1;
+            row[i] = row[C - 1 - i] ^ 1;
+            row[C - 1 - i] = tmp;
+        }
+    }
+    return A;
+}
