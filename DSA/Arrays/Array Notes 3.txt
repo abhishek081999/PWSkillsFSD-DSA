@@ -1,0 +1,19 @@
+Array >  Linear DS>
+contigious memory allocation>
+
+Index number 0-N
+Base Address
+100 ,104,108
+ ^
+arr = [79,87,82,57,95,69]
+
+(int = 4 bytes)
+1byte = 8 bits (0 1)
+
+arr[4] Index no.>..>> 95   ---------------> Random Access
+
+     Static Array        ||     Dynamic Array
+fixed array size         ||          change in size of array in run time 
+     |                   ||
+int[] arr = new int[10]  ||        Array list in java 
+                         ||         in python list
