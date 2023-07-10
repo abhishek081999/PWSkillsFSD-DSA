@@ -1,0 +1,91 @@
+<!-- 
+Build a responsive Navbar, on smaller screens it should be a hamburger 
+menu which on click should reveal the menu items nicely, 
+and on larger screens they should be displayed directly on the screen -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Navbar</title>
+    <style>
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .navbar-menu {
+            display: flex;
+        }
+
+        .navbar-menu-item {
+            margin-right: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar-menu {
+                display: none;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-mobile-menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+            }
+
+            .navbar-mobile-menu.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Logo</div>
+        <div class="navbar-toggle">&#9776;</div>
+        <div class="navbar-menu">
+            <div class="navbar-menu-item">Home</div>
+            <div class="navbar-menu-item">About</div>
+            <div class="navbar-menu-item">Services</div>
+            <div class="navbar-menu-item">Contact</div>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile-menu">
+        <div class="navbar-menu-item">Home</div>
+        <div class="navbar-menu-item">About</div>
+        <div class="navbar-menu-item">Services</div>
+        <div class="navbar-menu-item">Contact</div>
+    </div>
+
+    <script>
+        var navbarToggle = document.querySelector('.navbar-toggle');
+        var navbarMobileMenu = document.querySelector('.navbar-mobile-menu');
+
+        navbarToggle.addEventListener('click', function() {
+            navbarMobileMenu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
