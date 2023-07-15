@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h2>Publish Your Story</h2>
+            <input placeholder="Title of story will be here" id="artTitle"/>
+            <input placeholder="Enter Image Url" id="imgurl"/>
+            <input placeholder="Author Name" id="author"/>
+            <input placeholder="Category" id="cat"/>
+            <input placeholder="Enter your story" id="story"/>
+            <button id="btn" onClick="publishArticle()">submit my story</button>
+        </div>
+        <div class="box2">
+            <img src="" id="image"/>
+            <div>
+                <h1 id="title"></h1>
+                <p id="story-item"></p>
+                <p id="writer"></p>
+            </div>
+        </div>
+
+    </div>
+   <script src="./script.js"/> 
+</body>
+</html>
